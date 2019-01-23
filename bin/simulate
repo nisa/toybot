@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+
+$: << "lib/"
+
+require 'simulator'
+
+if ARGV.count < 1
+  puts "USAGE: simulate <samples/1.txt>"
+  exit 1
+else
+  simulator = Simulator.new(table: {x_max: 4, y_max: 4, origin: :SW }, command_file: ARGV[0])
+  simulator.simulate
+end
